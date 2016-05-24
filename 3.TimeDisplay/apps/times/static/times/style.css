@@ -1,0 +1,18 @@
+*{
+}
+div.label{
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px;
+  height: 50px;
+  width: 175px;
+  border: 1px solid black;
+}
+div.date_time{
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px;
+  height: 75px;
+  width: 200px;
+  border: 1px solid black;
+}
