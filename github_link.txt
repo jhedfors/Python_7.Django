@@ -1,0 +1,2 @@
+Assignment folder @
+https://github.com/jhedfors/Python_7.Django.git
