@@ -18,8 +18,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    # url(r'^blue', views.ninja, name='ninja'),
-    # url(r'^(?P<ninja_name>\.+)/$', views.ninja, name='ninja'),
-    url(r'^(?P<ninja_name>\w+)/$', views.ninjas, name='ninjas'),
+    url(r'^ninja/$', views.ninjas, name='ninjas'),
+    url(r'^ninja/(?P<ninja_color>\w+)/$', views.ninjas, name='ninja_color'),
 
 ]

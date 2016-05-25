@@ -3,20 +3,18 @@ from django.shortcuts import render
 def index(request):
     content = {}
     return render(request, 'ninjas/index.html', content)
-def ninjas(request, ninja_name):
-    name = ninja_name
-    if name == 'all':
+def ninjas(request, ninja_color = ''):
+    if ninja_color == '':
         ninja = 'all'
-    elif name == 'blue':
+    elif ninja_color == 'blue':
         ninja = 'blue'
-    elif name == 'orange':
+    elif ninja_color == 'orange':
         ninja = 'orange'
-    elif name == 'red':
+    elif ninja_color == 'red':
         ninja = 'red'
-    elif name == 'purple':
+    elif ninja_color == 'purple':
         ninja = 'purple'
     else:
         ninja = 'none'
     content = {'ninja':ninja}
-    print content
     return render(request,"ninjas/ninjas.html",content)
