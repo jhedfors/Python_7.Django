@@ -5,6 +5,21 @@
     <title></title>
   </head>
   <body>
-    index
+    <h4>Interest</h4>
+    {% for interest in interests%}
+      <p>Name: {{interest.name}}</p>
+      <p>Created: {{interest.created_at}}</p>
+      <br>
+    {% endfor%}
+    <h4>Users+Interest</h4>
+    {% for user in users%}
+      <p>First Name: {{user.first_name}}</p>
+      <p>Last Name: {{user.last_name}}</p>
+      <p>Age: {{user.age}}</p>
+      <p>Occupation: {{user.occupation}}</p>
+      <p>Interest: {{user.interest.name}}</p>
+      <p>Created: {{user.created_at}}</p>
+      <br>
+    {% endfor%}
   </body>
 </html>
