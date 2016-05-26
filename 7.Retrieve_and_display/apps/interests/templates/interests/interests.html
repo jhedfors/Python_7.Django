@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% for user in users%}
+      <p>{{user.id}}. <a href="{{user.id}}">{{user.first_name}} {{user.last_name}} </a></p>
+      <p>Interest: {{user.interest.name}}</p>
+      <br>
+    {% endfor%}
+  </body>
+</html>
