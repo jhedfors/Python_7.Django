@@ -18,8 +18,9 @@ def index(request):
     return render(request, 'products/index.html', context)
 def create(request):
     errors = models.Product().create(request.POST)
-    for error in errors:
-        messages.error(request, errors[error], extra_tags=error)
+    if errors:
+        for error in errors:
+            messages.error(request, errors[error], extra_tags=error)
     return redirect('/products')
 def edit_view(request,id):
     manufacturers = models.Manufacturer().index()
