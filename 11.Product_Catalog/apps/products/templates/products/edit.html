@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h3>{{product.name}} <info></h3>
+    <form class='edit' action="{% url 'edit' %}" method="post">
+      {% csrf_token %}
+      <p><label>Manufacturer/Brand:</label>
+        <select class="" name="manufacturer">
+          {% for manufacturer in manufacturers %}
+            {% if manufacturer.id == product.manufacturer.id %}
+            <option value = '{{manufacturer.id}}' selected > {{ manufacturer.manufacturer}} </option>
+            {%else%}
+            <option value = '{{manufacturer.id}}'> {{ manufacturer.manufacturer}} </option>
+            {%endif%}
+          {%endfor%}
+        </select>
+      </p>
+      <p><label>Name:</label>
+        <input type="text" name="name" value="{{ product.name }}">
+      </p>
+      <p><label>Price:</label>
+        <input type="text" name="price" value="{{ product.price }}">
+      </p>
+      <p><label>Description:</label>
+        <input type="text" name="description" value="{{ product.description }}">
+      </p>
+      <p>
+        <input type="hidden" name="id" value="{{ product.id }}">
+        <input type="submit" value="Update">
+      </p>
+
+    </form>
+    <p>
+      <a href="/products">Back</a>
+    </p>
+
+  </body>
+</html>
