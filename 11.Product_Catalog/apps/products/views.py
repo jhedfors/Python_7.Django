@@ -2,11 +2,6 @@ from django.shortcuts import render, redirect
 from . import models
 from django.contrib import messages
 
-from django import template
-from django.template.defaultfilters import stringfilter
-
-register = template.Library()
-
 def index(request):
     error_messages = messages.get_messages(request)
     errors = {}
