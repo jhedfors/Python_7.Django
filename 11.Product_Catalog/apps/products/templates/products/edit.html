@@ -20,13 +20,13 @@
         </select>
       </p>
       <p><label>Name:</label>
-        <input type="text" name="name" value="{{ product.name }}">
+        <input type="text" name="name" value="{{ product.name }}">{{ errors.name }}
       </p>
       <p><label>Price:</label>
-        <input type="text" name="price" value="{{ product.price }}">
+        <input type="text" name="price" value="{{ product.price }}">{{ errors.price }}
       </p>
       <p><label>Description:</label>
-        <input type="text" name="description" value="{{ product.description }}">
+        <input type="text" name="description" value="{{ product.description }}">{{ errors.description }}
       </p>
       <p>
         <input type="hidden" name="id" value="{{ product.id }}">

@@ -24,7 +24,7 @@ class Product(models.Model):
     def create(self,post):
         errors = {}
         if len(post['name'])<8:
-            errors['name'] = u'Product Name cannot be empty'
+            errors['name'] = u'Product Name must be 8 characters or more'
         if len(post['description'])<1:
             errors['description'] = u'Description cannot be empty'
         if len(errors) > 0:
@@ -34,6 +34,14 @@ class Product(models.Model):
         new.save()
         return
     def update(self,post):
+        errors = {}
+        if len(post['name'])<8:
+            errors['name'] = u'Product Name must be 8 characters or more'
+        if len(post['description'])<1:
+            errors['description'] = u'Description cannot be empty'
+        if len(errors) > 0:
+            print "ERRORS", errors
+            return errors
         manufacturer = Manufacturer.objects.get(id=post['manufacturer'])
         item = Product.objects.get(id=post['id'])
         item.manufacturer = manufacturer

@@ -17,10 +17,10 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.index.as_view(), name='index'),
-    url(r'^edit/(\d+)$', views.edit_view, name='edit_view'),
-    url(r'^edit_item$', views.edit, name='edit'),
-    url(r'^delete/(\d+)$', views.delete, name='delete'),
-    url(r'^create$', views.index.as_view(), name='create'),
+    url(r'^$', views.Index.as_view(), name='index'),
+    url(r'^(\d+)$', views.Edit.as_view(), name='edit_view'),
+    url(r'^edit_item$', views.Edit.as_view(), name='edit'),
+    url(r'^delete/(\d+)$', views.Index().delete, name='delete'),
+    url(r'^create$', views.Index.as_view(), name='create'),
 
 ]
